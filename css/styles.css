@@ -1,0 +1,107 @@
+/*Style.css*/
+
+:root{ /*Container que incluye cualquier aspecto predeterminado de la página, incluyendo la paleta de colores */ 
+    --blanco: #FFFFFF;
+    --oscuro: #212121;
+    --primario: #04364A;
+    --secundario: #176B87;
+    --terciario: #64CCC5;
+    --cuarto: #DAFFFB;
+}
+
+/**
+Style para el html en conjunto
+*/
+html{
+    font-size: 62.5%;
+    box-sizing: border-box; /*Para que el padding no afecte*/
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/**
+Style para el body 
+*/
+body{
+    font-size: 16px; /* 1 rem= 10px*/
+    font-family: 'Playfair Display', serif;
+}
+/**
+Style para el heading principal
+*/
+.titulo { /*Es mejor usar clases, ya que pueden ser reutilizables */
+    text-align: center; 
+    font-size: 3.8rem; /* rem se adapta a diferentes tamaños y pantallas*/
+    color: var(--primario);
+    
+}
+
+/**
+Style para el span en el h1
+*/
+.titulo span{
+    font-size: 2rem;
+}
+
+/**
+Style para el contenedor de la navegación
+*/
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto; /*Top right bottom left */
+}
+
+/**
+Style para la clase general de navegación
+*/
+.nav-bg{
+    background-color: var(--secundario);
+}
+
+/**
+Style para la clase de navegación
+*/
+.navegacion-principal{
+    display: flex; /*Propiedades para el flexbox*/
+    flex-direction: column;
+}
+
+/*Media Query para el menú de navegación*/
+@media (min-width: 768px ) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between; /*Hace que el arrangement tenga un espaciado entre cada enlace, mandando el primero y el último a las orillas*/
+    }
+}
+
+/**
+Style para los links de la navegación
+*/
+.navegacion-principal a{
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+/**
+Style para los links de la navegación
+*/
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--terciario);
+}
+
+.hero{
+    background-image: url(../images/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 41rem;
+    padding: 20px;
+}
+
+
