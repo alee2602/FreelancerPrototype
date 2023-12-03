@@ -1,2 +1,2 @@
 # FreelancerPrototype
-Initial project of a website offering Freelance services (not responsive)
+Initial project of a website offering Freelance services (responsive)
