@@ -7,6 +7,7 @@
     --secundario: #176B87;
     --terciario: #64CCC5;
     --cuarto: #DAFFFB;
+    --degradado: #F0FFFF;
 }
 
 /**
@@ -26,15 +27,7 @@ Style para el body
 body{
     font-size: 16px; /* 1 rem= 10px*/
     font-family: 'Playfair Display', serif;
-}
-/**
-Style para el heading principal
-*/
-.titulo { /*Es mejor usar clases, ya que pueden ser reutilizables */
-    text-align: center; 
-    font-size: 3.8rem; /* rem se adapta a diferentes tamaños y pantallas*/
-    color: var(--primario);
-    
+    background-image: linear-gradient(to top, var(--degradado) 0%, var(--blanco) 100%); /*Degradado de la página*/
 }
 
 /**
@@ -50,6 +43,55 @@ Style para el contenedor de la navegación
 .contenedor{
     max-width: 120rem;
     margin: 0 auto; /*Top right bottom left */
+}
+
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    font-size: 2rem;
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    text-decoration: none; /*Le quita el subrayado del link*/
+    font-weight: 700;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+
+}
+@media (min-width: 480px) { /* El botón se ajusta al tamaño de la pantalla*/
+    .boton{
+        width: auto;
+    }
+    
+}
+
+.sombra{
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    background-color: var(--blanco);
+    padding: 20;
+    border-radius: 1rem;
+}
+
+/**
+Style para cada heading determinado
+*/
+h1{
+    font-size: 3.8rem; /* rem se adapta a diferentes tamaños y pantallas*/
+    color: var(--primario);
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1,h2,h3{
+    text-align: center;  
 }
 
 /**
@@ -100,8 +142,22 @@ Style para los links de la navegación
     background-image: url(../images/hero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 41rem;
-    padding: 20px;
+    height: 35rem;
+    position: relative;
+    margin-bottom: 2rem;
 }
 
+.contenido-hero{
+    position: absolute;
+    background-color: rgba(0,0,0, .7);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
+.contenido-hero h2, .contenido-hero p{
+    color: var(--blanco);
+}
